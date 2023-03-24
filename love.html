@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: cursive;
+        user-select: none;
+        color: #fff;
+    }
+    body{
+        display: flex;
+        background: url(/image/gif6.gif);
+        align-items: center;
+        min-height: 100vh;
+        background-position: center;
+    }
+    #parent{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        margin: auto;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        padding: 10px;
+        backdrop-filter: blur(8px);
+        height: auto;
+    }
+    #display{
+        width: auto;
+        height: 60px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        border: 2px solid #fff;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 24px;
+    }
+    #child{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 3px;
+    } 
+    button{
+        padding: 5px;
+        margin: 10px;
+        font-size: 24px;
+        width: 40px;
+        border: none;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+        color: black;
+    }
+    button:hover{
+        color: #fff;
+        background-color: black;
+        border-radius: 5px;
+        transform: translate(-5px);
+        border: 1px solid #fff;
+    }
+    #s{
+        width: auto;
+        padding: 10px;
+        border-radius: 8px;
+        transition: .5s;
+    }
+    #s:hover{
+        border-color: #fff;
+        background: transparent;
+        backdrop-filter: blur(3px);
+        color: #fff;
+        transform: translateY(0);
+    }
+    .san{
+        position: absolute;
+        top: 85%;
+        left: 47%;
+    }
+  </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="display"></div>
+
+        <div id="child">
+           <button id="one">1</button>
+           <button id="two">2</button>
+           <button id="three">3</button>
+           <button id="four">4</button>
+           <button id="five">5</button>
+           <button id="six">6</button>
+           <button id="seven">7</button>
+           <button id="eight">8</button>
+           <button id="nine">9</button>
+           <button id="zero">0</button>
+           <button id="plus">+</button>
+           <button id="sub">-</button>
+           <button id="mul">*</button>
+           <button id="division">/</button>
+           <button id="equal">=</button>
+           <button id="dot">.</button>
+           <button id="del">del</button>
+           <button id="percentage">%</button>
+           <button id="ac">Ac</button>
+           <button id="power">X<sup>2</sup></button>
+        </div>
+        
+    </div>
+    <div class="san">
+        <button id="s">back</button>
+    </div>
+    <script>
+        let display = document.getElementById('display')
+        
+        one.onclick = () => display.innerHTML +='1'
+        two.onclick = () => display.innerHTML +='2'
+        three.onclick = () => display.innerHTML +='3'
+        four.onclick = () => display.innerHTML +='4'
+        five.onclick = () => display.innerHTML +='5'
+        six.onclick = () => display.innerHTML +='6'
+        seven.onclick = () => display.innerHTML +='7'
+        eight.onclick = () => display.innerHTML +='8'
+        nine.onclick = () => display.innerHTML +='9'
+        zero.onclick = () => display.innerHTML +='0'
+        plus.onclick = () => display.innerHTML += '+'
+        sub.onclick = () => display.innerHTML += '-'
+        mul.onclick = () => display.innerHTML += '*'
+        division.onclick = () => display.innerHTML += '/'
+        dot.onclick = () => display.innerHTML += '.'
+        equal.onclick = () => display.innerHTML = eval(display.innerHTML)
+        del.onclick = () => display.innerHTML = display.innerHTML.slice(0,-1)
+        percentage.onclick = () => display.innerHTML += '%'
+        ac.onclick = () => display.innerHTML = ''
+        power.onclick = () =>display.innerHTML = eval(eval(display.innerHTML) + '**2')
+
+        s.onclick = () => display.innerHTML = ' i love u Angel'
+
+    </script>
+</body>
+</html>
